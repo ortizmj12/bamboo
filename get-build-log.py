@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+```
+This script is used to view a Bamboo build log using the familiar features in Linux's less.
+```
+
 import argparse
 import yaml
 import os
@@ -30,8 +34,8 @@ def get_creds():
     credentials_file = home + '/.credentials'
     if os.path.isfile(credentials_file):
         credentials = yaml.load(open(credentials_file))
-        username = credentials['sqsp-ldap']['username']
-        password = credentials['sqsp-ldap']['password']
+        username = credentials['ldap']['username']
+        password = credentials['ldap']['password']
         return username, password
     else:
         print(credentials_file + ' does not exist.')
